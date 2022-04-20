@@ -1,0 +1,6 @@
+﻿ServerName,PatchGroup,ServiceName,ServiceStartupType
+SERVERA,QA,ServiceA,Automatic
+SERVERB,QA,ServiceB,Automatic
+SERVERE,PRODUCTION,ServiceC,Automatic
+SERVERF,PRODUCTION,ServiceD,Automatic
+SERVERG,PRODUCTION,ServiceE,Automatic

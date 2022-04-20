@@ -1,0 +1,31 @@
+A utility for assisting with server patching. 
+
+The script can selectively run the following tasks:
+•	Take snapshot of Windows service status
+	o	Intended to be ran prior to deploying windows patches and rebooting servers. Can be referenced after server patching and reboots to ensure all windows services and application services are running.
+	o	This needs to be ran prior to running the “Compare captured service status with current service status” task. 
+
+•	Stop & disable application services
+	o	Stops windows services prior to rebooting server. Service list is managed in PatchingScriptServiceList.csv
+
+•	Reboot Servers
+	o	Reboots servers in selected patch group and reboot group. 
+	o	Patch group = environment. Ex: PROD/QA/DEV
+	o	Reboot group = controls order in which servers in the patch group are rebooted.
+
+•	Check Server Uptime
+	o	Checks server uptime. Gives boot time and elapsed boot time for servers in the selected reboot group.
+
+•	Enable & Start application services
+	o	Restarts application services. Intended to be ran for any explicitly disabled service after servers are rebooted. 
+
+•	(Validation) Compare captured service status with current service status
+	o	Compares the status of services from before the server patching to the status of services after server patching. A quick validation to see if any windows services or application services did not start after server was rebooted.
+	o	Requires that “Take snapshot of Windows service status” task is ran prior to deploying patches and rebooting the servers.
+
+•	(Validation) Get installed patch list
+	o	Returns recently installed windows patches for servers in the selected reboot group.
+
+•	(View Script Configuration) Display servers in patch group
+	o	Displays the servers configured in the PatchingScriptServerList csv file. Patch groups and reboot groups are used to target specific servers with these tasks. 
+

@@ -1,0 +1,5 @@
+﻿ServiceName,Comment
+wmiApSrv,WMI performance adapter which collects information regarding performance. This program is a non-essential system process
+bits,Background Intelligent Transfer Service (BITS) technology which downloads updates using idle bandwidth.
+ScDeviceEnum,ScDeviceEnum is a Windows Server 2012 service that creates software device nodes for all smart card readers accessible to a given session
+wuauserv,"wuauserv process or Windows Update Service enables the detection, download, and installation of updates for Windows and other programs."
